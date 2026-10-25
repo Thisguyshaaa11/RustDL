@@ -22,32 +22,60 @@ Install these tools before running RustDL:
 - Deno
 - FFmpeg
 
-## Installation
+## Linux Dependencies
 
-Clone the repository:
+RustDL requires the following software:
+
+- **Git**: to clone the repository
+- **Rust and Cargo**: to build RustDL
+- **yt-dlp**: to download videos
+- **Deno**: for JavaScript runtime support in yt-dlp
+- **FFmpeg**: for video conversion
+
+### Debian / Ubuntu
+
+Install Git, FFmpeg, and Deno:
+
+```bash
+sudo apt update
+sudo apt install git ffmpeg curl unzip
+```
+
+Install Rust using the official Rust installer:
+
+```bash
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+```
+
+Follow the installer instructions, then restart your terminal or run:
+
+```bash
+source "$HOME/.cargo/env"
+```
+
+Install Deno using its official installer:
+
+```bash
+curl -fsSL https://deno.land/install.sh | sh
+```
+
+Make sure `~/.deno/bin` is in your PATH.
+
+Install yt-dlp using the official installation instructions:
+https://github.com/yt-dlp/yt-dlp/wiki/Installation
+
+### Build and Run
 
 ```bash
 git clone https://github.com/Thisguyshaaa11/RustDL.git
 cd RustDL
-```
-
-Build the application:
-
-```bash
 cargo build --release
-```
-
-Run RustDL:
-
-```bash
 ./target/release/belajar-rust
 ```
 
-## Notes
+### Notes
 
-- Some videos may be unavailable because of privacy settings, regional restrictions, or platform changes.
-- Only download content you have permission to download.
-- Conversion depends on FFmpeg and the codecs available in your environment.
+RustDL depends on external tools and supported video platforms. Some videos may be unavailable because of login requirements, privacy settings, regional restrictions, or platform changes.
 
 ## License
 
